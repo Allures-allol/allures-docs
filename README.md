@@ -19,16 +19,16 @@
 
 ## Структура репозитория
 
-allures-docs/
-├── README.md # Этот файл — общее описание репозитория
-├── docs/
-│ ├── api.md # Документация по API
-│ ├── architecture.md # Архитектура проекта и схемы
-│ ├── presentations/ # Презентации в PDF/PPTX
-│ └── other-docs.md # Дополнительные гайды и инструкции
-├── images/
-│ └── architecture/ # Архитектурные схемы и скриншоты
-└── .gitignore # Игнорируем лишнее (node_modules и прочее)
+`allures-docs/`
+-   `README.md` # Этот файл — общее описание репозитория
+-   `docs/`
+-   `api.md` # Документация по API
+-   `architecture.md` # Архитектура проекта и схемы
+-   `presentations/` # Презентации в PDF/PPTX
+-   `other-docs.md` # Дополнительные гайды и инструкции
+-   `images/`
+-   `architecture/` # Архитектурные схемы и скриншоты
+-   `.gitignore` # Игнорируем лишнее (node_modules и прочее)
 
 
 ---
