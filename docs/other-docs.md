@@ -40,3 +40,29 @@
 | Категория              | Команда                             | Назначение                                     |
 | ---------------------- | ----------------------------------- | ---------------------------------------------- |
 | ❌ Очистка кеша   | `docker system prune -a --volumes`   | Очищаем кеш докера |
+
+# Fail2Ban Cheatsheet
+
+Разные команды для управления Fail2Ban на сервере.
+
+| Команда / действие                                | Назначение / Что делает                                |
+| ------------------------------------------------- | ----------------------------------------------------- |
+| `sudo fail2ban-client status`                     | Показывает все jails на сервере                      |
+| `sudo fail2ban-client status <jail>`             | Показывает статус конкретного jail (например, sshd)  |
+| `sudo fail2ban-client set <jail> banip <IP>`     | Забанить конкретный IP                                |
+| `sudo fail2ban-client set <jail> unbanip <IP>`   | Разбанить конкретный IP                               |
+| `sudo systemctl start fail2ban`                  | Запустить сервис Fail2Ban                             |
+| `sudo systemctl stop fail2ban`                   | Остановить сервис Fail2Ban                            |
+| `sudo systemctl restart fail2ban`                | Перезапустить сервис Fail2Ban                          |
+| `sudo systemctl status fail2ban -l`              | Посмотреть детальный статус Fail2Ban                  |
+| `tail -f /var/log/fail2ban.log`                  | Смотреть логи Fail2Ban в реальном времени            |
+
+## Jails по умолчанию
+
+| Jail                    | Назначение                                  |
+| ----------------------- | ------------------------------------------ |
+| `sshd`                  | Защита SSH от брутфорса                     |
+| `nginx-http-auth`       | Защита nginx basic auth                      |
+| `nginx-botsearch`       | Защита от ботов и сканеров                  |
+
+> Для кастомных действий, например с Cloudflare, необходимо настраивать файлы в `/etc/fail2ban/jail.d/` и action-скрипты.
